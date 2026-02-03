@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Days Between Dates</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h2>Days Between Two Dates</h2>
+    <input type="date" id="start">
+    <input type="date" id="end">
+    <button onclick="daysBetween()">Calculate</button>
+    <p id="result"></p>
+
+<script>
+function daysBetween() {
+    let s = new Date(document.getElementById('start').value);
+    let e = new Date(document.getElementById('end').value);
+    let diff = (e - s) / (1000 * 60 * 60 * 24);
+    let weeks = Math.floor(diff / 7);
+    let days = diff % 7;
+    document.getElementById('result').innerHTML =
+        diff + " days (" + weeks + " weeks " + days + " days)";
+}
+</script>
+</body>
+</html>

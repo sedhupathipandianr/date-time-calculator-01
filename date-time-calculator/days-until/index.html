@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Days Until Date</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h2>Days Until Specific Date</h2>
+    <input type="date" id="future">
+    <button onclick="daysUntil()">Calculate</button>
+    <p id="result"></p>
+
+<script>
+function daysUntil() {
+    let today = new Date();
+    let future = new Date(document.getElementById('future').value);
+    let diff = Math.ceil((future - today) / (1000*60*60*24));
+    document.getElementById('result').innerHTML = diff + " days remaining";
+}
+</script>
+</body>
+</html>

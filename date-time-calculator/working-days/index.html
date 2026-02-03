@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Working Days</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h2>Working Days Calculator</h2>
+    <input type="date" id="start">
+    <input type="date" id="end">
+    <button onclick="workingDays()">Calculate</button>
+    <p id="result"></p>
+
+<script>
+function workingDays() {
+    let s = new Date(document.getElementById('start').value);
+    let e = new Date(document.getElementById('end').value);
+    let count = 0;
+    for (let d = s; d <= e; d.setDate(d.getDate() + 1)) {
+        let day = d.getDay();
+        if (day !== 0 && day !== 6) count++;
+    }
+    document.getElementById('result').innerHTML = count + " working days";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Add/Subtract</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h2>Date Add / Subtract</h2>
+    <input type="date" id="base">
+    <input type="number" id="days" placeholder="Days">
+    <button onclick="addDays()">Calculate</button>
+    <p id="result"></p>
+
+<script>
+function addDays() {
+    let base = new Date(document.getElementById('base').value);
+    let days = parseInt(document.getElementById('days').value);
+    base.setDate(base.getDate() + days);
+    document.getElementById('result').innerHTML = base.toDateString();
+}
+</script>
+</body>
+</html>
